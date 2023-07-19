@@ -50,13 +50,9 @@ class Solution:
         return None
       if len(numbers) == 1:
         print("None missing")
-      maxnum=0
-      minnum=1000000000
       missingnums=[]
-      for num in numbers:
-        maxnum=max(maxnum, num)
-        minnum=min(minnum, num)
-      for i in range(round(minnum, 0), round(maxnum+1, 0)):
+      numbers.sort()
+      for i in range(int(numbers[0]), int(numbers[-1])):
         if not (i in numbers):
           missingnums.append(i)
       return missingnums
