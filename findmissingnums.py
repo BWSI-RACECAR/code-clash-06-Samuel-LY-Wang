@@ -61,7 +61,7 @@ class Solution:
 def main():
     array = input().split(" ")
     for x in range (0, len(array)):
-        array[x] = float(array[x])
+        array[x] = int(round(float(array[x])))
 
     tc1 = Solution()
     ans = tc1.findMissingNumbers(array)
