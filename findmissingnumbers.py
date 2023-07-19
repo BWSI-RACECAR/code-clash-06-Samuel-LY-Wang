@@ -42,35 +42,6 @@ Input: [3, 4, 2, 1, 6, 7, 5, 9, 10] Output:[8]
 Input: [3, 3, 3, 3, 4, 7] Output: [5, 6]
 
 """
-def removeDuplicates(arr, n):
- 
-    # Return, if array is empty or contains
-    # a single element
-    if n == 0 or n == 1:
-        return n
- 
-    temp = list(range(n))
- 
-    # Start traversing elements
-    j = 0
-    for i in range(0, n-1):
- 
-        # If current element is not equal to next
-        # then store that current element
-        if arr[i] != arr[i+1]:
-            temp[j] = arr[i]
-            j += 1
- 
-    # Store the last element as whether it is unique
-    # or repeated, it isn't stored previously
-    temp[j] = arr[n-1]
-    j += 1
-    arr=[]
-    # Modify original array
-    for i in range(0, j):
-        arr.append(temp[i])
-    return arr
-
 
 class Solution:
     def findMissingNumbers(self, numbers):
@@ -85,7 +56,7 @@ class Solution:
       for num in numbers:
         maxnum=max(maxnum, num)
         minnum=min(minnum, num)
-      for i in range(int(minnum), int(maxnum+1)):
+      for i in range(round(minnum, 0), round(maxnum+1, 0)):
         if not (i in numbers):
           missingnums.append(i)
       return missingnums
