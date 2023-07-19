@@ -52,7 +52,7 @@ class Solution:
         print("None missing")
       missingnums=[]
       numbers.sort()
-      for i in range(int(numbers[0]), int(numbers[-1])):
+      for i in range(int(round(numbers[0])), int(round(numbers[-1]))):
         if not (i in numbers):
           missingnums.append(i)
       return missingnums
@@ -61,7 +61,7 @@ class Solution:
 def main():
     array = input().split(" ")
     for x in range (0, len(array)):
-        array[x] = float(array[x])
+        array[x] = int(round(float(array[x])))
 
     tc1 = Solution()
     ans = tc1.findMissingNumbers(array)
